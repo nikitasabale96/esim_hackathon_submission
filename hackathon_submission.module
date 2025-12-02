@@ -37,7 +37,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "access hackathon_submission"
         ),
-        "type" => MENU_CALLBACK
+        // "type" => MENU_CALLBACK
     );
     $items["hackathon/completed-circuits"] = array(
         "title" => "Completed Circuits",
@@ -45,7 +45,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "download completed circuit"
         ),
-        "type" => MENU_CALLBACK
+        // "type" => MENU_CALLBACK
     );
     $items["hackathon/download/completed-circuits"] = array(
         "title" => "Download Circuit Design and Simulation Marathon using eSim Completed Circuit",
@@ -56,7 +56,7 @@ function hackathon_submission_menu()
         'access arguments' => array(
             "download completed circuit"
             ),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
     );
     $items["hackathon-submission/all-submissions"] = array(
         "title" => "List of all submissions",
@@ -71,7 +71,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        'type' => MENU_LOCAL_TASK,
+        // 'type' => MENU_LOCAL_TASK,
         'weight' => 1
     );
     $items["hackathon-submission/all-submissions/final-reports"] = array(
@@ -80,7 +80,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        'type' => MENU_DEFAULT_LOCAL_TASK,
+        // 'type' => MENU_DEFAULT_LOCAL_TASK,
         'weight' => 0
     );
     $items["hackathon-submission/view-details/final-submission"] = array(
@@ -97,14 +97,14 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        "type" => MENU_CALLBACK
+        // "type" => MENU_CALLBACK
     );
     $items['hackathon-submission/download/project-files'] = array(
         'title' => 'Download Project Files',
         'description' => 'Download Project Files', 
         'page callback' => 'hackathon_submission_download_project_files',
         'access arguments' => array("manage hackathon_submission"),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         
     );
 
@@ -113,7 +113,7 @@ function hackathon_submission_menu()
         'description' => 'Download Completed Circuit', 
         'page callback' => 'hackathon_submission_download_completed_circuit',
         'access arguments' => array("download completed circuit"),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         
     );
     $items['hackathon-submission/download/all-files'] = array(
@@ -121,7 +121,7 @@ function hackathon_submission_menu()
         'description' => 'Download All Files', 
         'page callback' => 'create_zip_of_all_files',
         'access arguments' => array("manage hackathon_submission"),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         
     );
     $items['hackathon-submission/generate-report/literature-survey'] = array(
@@ -131,7 +131,7 @@ function hackathon_submission_menu()
             'access arguments' => array(
                 'access hackathon_submission'
             ),
-            'type' => MENU_CALLBACK,
+            // 'type' => MENU_CALLBACK,
             'file' => 'latex.inc'
     );
      $items['hackathon-submission/generate-report/final-submission'] = array(
@@ -141,7 +141,7 @@ function hackathon_submission_menu()
         'access arguments' => array(
             'access hackathon_submission'
         ),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         'file' => 'latex.inc'
     );
     $items["hackathon-submission/add/literature-report"] = array(
@@ -153,7 +153,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'add_submission.inc'
     );
     $items["hackathon-submission/add/final-submission"] = array(
@@ -165,7 +165,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'final_submission.inc'
     );
     $items["hackathon-submission/add/project-files"] = array(
@@ -177,7 +177,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         "file" => 'final_submission.inc'
     );
     $items["hackathon-submission/manage/edit-submission"] = array(
@@ -189,7 +189,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );
     $items["hackathon-submission/edit/literature-report"] = array(
@@ -201,7 +201,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );
 
@@ -214,7 +214,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'final_submission.inc'
     );
     $items["hackathon-submission/edit/project-files"] = array(
@@ -226,7 +226,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'final_submission.inc'
     );
     /* ADMIN SETTINGS */
@@ -240,7 +240,7 @@ function hackathon_submission_menu()
         'access arguments' => array(
             'administer hackathon_submission settings'
         ),
-        'type' => MENU_NORMAL_ITEM,
+        // 'type' => MENU_NORMAL_ITEM,
         'file' => 'settings.inc'
     );
 
@@ -253,7 +253,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'add_submission.inc'
     );
     $items["mixed-signal-design-marathon/add/final-submission"] = array(
@@ -265,7 +265,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'final_submission.inc'
     );
     $items["mixed-signal-design-marathon/edit/final-submission"] = array(
@@ -277,7 +277,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'final_submission.inc'
     );
     $items["mixed-signal-design-marathon/proposed"] = array(
@@ -286,7 +286,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "access hackathon_submission"
         ),
-        "type" => MENU_CALLBACK
+        // "type" => MENU_CALLBACK
     );
     $items["mixed-signal-design-marathon/edit/literature-report"] = array(
         "title" => "Edit Mixed Signal Marathon Literature report",
@@ -297,7 +297,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );
     $items["mixed-signal-design-marathon/view/literature-report"] = array(
@@ -309,7 +309,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );  
     $items["mixed-signal-design-marathon/view/final-submission"] = array(
@@ -321,7 +321,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );    
     $items["mixed-signal-design-marathon/all-submissions"] = array(
@@ -337,7 +337,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        'type' => MENU_LOCAL_TASK,
+        // 'type' => MENU_LOCAL_TASK,
         'weight' => 1
     );
     $items["mixed-signal-design-marathon/all-submissions/final-submissions"] = array(
@@ -346,7 +346,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        'type' => MENU_DEFAULT_LOCAL_TASK,
+        // 'type' => MENU_DEFAULT_LOCAL_TASK,
         'weight' => 0
     );
     $items['mixed-signal-design-marathon/download/literature-report'] = array(
@@ -354,7 +354,7 @@ function hackathon_submission_menu()
         'description' => 'Download MSCD Literature Report', 
         'page callback' => 'mscd_download_literature_report',
         'access arguments' => array("add hackathon_submission"),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         'file' => 'download.inc'
         
     );
@@ -363,7 +363,7 @@ function hackathon_submission_menu()
         'description' => 'Download MSCD FInal Submission', 
         'page callback' => 'mscd_download_final_submission',
         'access arguments' => array("add hackathon_submission"),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         'file' => 'download.inc'
         
     );
@@ -374,7 +374,7 @@ function hackathon_submission_menu()
         'access arguments' => array(
             "download completed circuit"
             ),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
     );
     $items["mixed-signal-design-marathon/download/circuits"] = array(
         "title" => "Download Mixed Signal Marathon Completed Circuit",
@@ -385,7 +385,7 @@ function hackathon_submission_menu()
         'access arguments' => array(
             "download completed circuit"
             ),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     ); 
     $items["mixed-signal-design-marathon/download-emails"] = array(
@@ -394,7 +394,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'download.inc'
     );
     /******************** Mixed Signal SoC Hackathon *********************************/
@@ -404,7 +404,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "download completed circuit"
         ),
-        "type" => MENU_CALLBACK
+        // "type" => MENU_CALLBACK
     );
     $items["mixed-signal-soc-design-marathon/download/circuits"] = array(
         "title" => "Download Mixed Signal SoC Design Marathon Completed Circuit",
@@ -415,7 +415,7 @@ function hackathon_submission_menu()
         'access arguments' => array(
             "download completed circuit"
             ),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );
     $items["mixed-signal-soc-design-marathon/add/literature-report"] = array(
@@ -427,7 +427,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'add_submission.inc'
     );
     $items["mixed-signal-soc-design-marathon/proposed"] = array(
@@ -436,7 +436,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "access hackathon_submission"
         ),
-        "type" => MENU_CALLBACK
+        // "type" => MENU_CALLBACK
     );
     $items["mixed-signal-soc-design-marathon/view/literature-report"] = array(
         "title" => "View Mixed Signal SoC Design Marathon Literature report",
@@ -447,7 +447,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );
     $items["mixed-signal-soc-design-marathon/edit/literature-report"] = array(
@@ -459,7 +459,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );
     $items['mixed-signal-soc-design-marathon/download/literature-report'] = array(
@@ -467,7 +467,7 @@ function hackathon_submission_menu()
         'description' => 'Download SoC Marathon Literature Report', 
         'page callback' => 'soc_marathon_download_literature_report',
         'access arguments' => array("add hackathon_submission"),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         'file' => 'download.inc'
         
     );
@@ -484,7 +484,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        'type' => MENU_LOCAL_TASK,
+        // 'type' => MENU_LOCAL_TASK,
         'weight' => 1
     );
     $items["mixed-signal-soc-design-marathon/all-submissions/final-submissions"] = array(
@@ -493,7 +493,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        'type' => MENU_DEFAULT_LOCAL_TASK,
+        // 'type' => MENU_DEFAULT_LOCAL_TASK,
         'weight' => 0
     );
     $items["mixed-signal-soc-design-marathon/download-emails"] = array(
@@ -502,7 +502,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "manage hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'download.inc'
     );
     $items["mixed-signal-soc-design-marathon/add/final-submission"] = array(
@@ -514,7 +514,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'final_submission.inc'
     );
     $items["mixed-signal-soc-design-marathon/view/final-submission"] = array(
@@ -526,7 +526,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'edit_submission.inc'
     );    
     $items["mixed-signal-soc-design-marathon/edit/final-submission"] = array(
@@ -538,7 +538,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'final_submission.inc'
     );
     $items['mixed-signal-soc-design-marathon/download/final-submission'] = array(
@@ -546,7 +546,7 @@ function hackathon_submission_menu()
         'description' => 'Download Mixed Signal SoC Design Marathon Final Submission', 
         'page callback' => 'soc_marathon_download_final_submission',
         'access arguments' => array("add hackathon_submission"),
-        'type' => MENU_CALLBACK,
+        // 'type' => MENU_CALLBACK,
         'file' => 'download.inc'
         
     );
@@ -559,7 +559,7 @@ function hackathon_submission_menu()
         "access arguments" => array(
             "add hackathon_submission"
         ),
-        "type" => MENU_CALLBACK,
+        // "type" => MENU_CALLBACK,
         'file' => 'final_submission.inc'
     );
     return $items;
@@ -606,7 +606,7 @@ function soc_marathon_hackathon_submission_files_path() {
 function hackathon_submission_completed_circuits()
 {
     $page_content = "";
-    $query = db_select('hackathon_completed_circuits');
+    $query = \Drupal::database()->select('hackathon_completed_circuits');
     $query->fields('hackathon_completed_circuits');
     $result = $query->execute();
     //var_dump($result->rowCount());die;
@@ -615,20 +615,23 @@ function hackathon_submission_completed_circuits()
     $preference_rows = array();
     while($row_completed_circuits = $result->fetchObject())
     {        
-        $query_pro = db_select('hackathon_literature_survey');
+        $query_pro = \Drupal::database()->select('hackathon_literature_survey');
         $query_pro->fields('hackathon_literature_survey');
         $query_pro->condition('id', $row_completed_circuits->literature_survey_id);
         $result_pro = $query_pro->execute();
         while ($row = $result_pro->fetchObject())
         {
             //$approval_date = date("Y", $row->approval_date);
-            $preference_rows[] = array(
-                $i,
-                l($row->circuit_name, 'hackathon/download/completed-circuits/' . $row_completed_circuits->literature_survey_id),
-                wordwrap($row->participant_name, 10, "\n", false),
-                $row->institute,
-                //$approval_date
-            );
+            // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $preference_rows[] = array(
+//                 $i,
+//                 l($row->circuit_name, 'hackathon/download/completed-circuits/' . $row_completed_circuits->literature_survey_id),
+//                 wordwrap($row->participant_name, 10, "\n", false),
+//                 $row->institute,
+//                 //$approval_date
+//             );
+
             
         } //$row = $result->fetchObject()
         $i--;
@@ -639,23 +642,32 @@ function hackathon_submission_completed_circuits()
             'Participant Name',
             'Institute',
         );
-        $page_content .= theme('table', array(
-            'header' => $preference_header,
-            'rows' => $preference_rows
-        ));
+        // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $page_content .= theme('table', array(
+//             'header' => $preference_header,
+//             'rows' => $preference_rows
+//         ));
+
     return $page_content;
 }
 
 function download_hackathon_final_submission_form($form, $form_state){
-     global $user;
+     $user = \Drupal::currentUser();
     $submission_id = arg(3);
-    $query = db_select('hackathon_literature_survey');
+    $query = \Drupal::database()->select('hackathon_literature_survey');
     $query->fields('hackathon_literature_survey');
     $query->condition('id', $submission_id);
     //$query->range(0, 1);
     $submission_q = $query->execute();
     $literature_submission_data = $submission_q->fetchObject();
-    $query = db_select('hackathon_final_submission');
+    $query = \Drupal::database()->select('hackathon_final_submission');
     $query->fields('hackathon_final_submission');
     $query->condition('literature_survey_id', $submission_id);
     //$query->range(0, 1);
@@ -677,27 +689,30 @@ function download_hackathon_final_submission_form($form, $form_state){
         '#type' => 'item',
         '#markup' => $literature_submission_data->circuit_name
     );
-    $form['reference_files']['final_report'] = array(
-        '#type' => 'item',
-        '#markup' => l('Download Final Report and Project Files', 'hackathon-submission/download/final-submission/' . $literature_submission_data->id)
-    );
+    // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $form['reference_files']['final_report'] = array(
+//         '#type' => 'item',
+//         '#markup' => l('Download Final Report and Project Files', 'hackathon-submission/download/final-submission/' . $literature_submission_data->id)
+//     );
+
     return $form;
 }
 
 function hackathon_submission_display_my_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending proposals to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view your proposals. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view your proposals. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $output = "<p>Final Submission</p>";
     $final_submission_rows = array();
-    $query = db_select('hackathon_literature_survey');
+    $query = \Drupal::database()->select('hackathon_literature_survey');
     $query->fields('hackathon_literature_survey');
     //$query->condition('approval_status', 2);
     $query->condition('uid',$user->uid);
@@ -705,10 +720,10 @@ function hackathon_submission_display_my_submissions()
     $my_proposals_q = $query->execute();
     $my_proposals_data = $my_proposals_q->fetchObject();
     if(!$my_proposals_data){
-        drupal_set_message('We have not received your submission', 'error');
+        \Drupal::messenger()->addError('We have not received your submission');
         drupal_goto('');
     }
-    $query = db_select('hackathon_final_submission');
+    $query = \Drupal::database()->select('hackathon_final_submission');
     $query->fields('hackathon_final_submission');
     $query->condition('uid',$user->uid);
     $query->condition('literature_survey_id', $my_proposals_data->id);
@@ -717,7 +732,7 @@ function hackathon_submission_display_my_submissions()
     $final_submission_data = $final_submission_q->fetchObject();
     $today = date("Y-m-d H:i:s");
     $final_submission_last_date = "2021-06-30 23:59:59.0";
-    $query = db_select('hackathon_final_submission_project_files');
+    $query = \Drupal::database()->select('hackathon_final_submission_project_files');
     $query->fields('hackathon_final_submission_project_files');
     $query->condition('literature_submission_id', $submission_id);
     $project_files_data = $query->execute()->fetchObject();
@@ -728,25 +743,37 @@ function hackathon_submission_display_my_submissions()
        $output .= l('Edit Project Files', 'hackathon-submission/edit/project-files/' . $my_proposals_data->id);
     }*/
     if($today > $final_submission_last_date){
-        $action =   l('Download Final Report', 'hackathon-submission/generate-report/final-submission/' . $final_submission_data->id);  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =   l('Download Final Report', 'hackathon-submission/generate-report/final-submission/' . $final_submission_data->id);
+  
         $creation_date = date('d-m-Y', $final_submission_data->creation_date);
     }
     else{
         if(!$final_submission_data){
-            $action =   l('Add Final Submission', 'hackathon-submission/add/final-submission') . ' | ' . l('Edit Project files', 'hackathon-submission/edit/project-files/' . $my_proposals_data->id);
+            // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =   l('Add Final Submission', 'hackathon-submission/add/final-submission') . ' | ' . l('Edit Project files', 'hackathon-submission/edit/project-files/' . $my_proposals_data->id);
+
             $creation_date = "Final Submission not received";
         }
         else{
-            $action =   l('Download Final Report', 'hackathon-submission/generate-report/final-submission/' . $final_submission_data->id) . ' | ' . l('Edit Final Report', 'hackathon-submission/edit/final-submission/' . $final_submission_data->id) . ' | ' . l('Edit Project files', 'hackathon-submission/edit/project-files/' . $my_proposals_data->id);
+            // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =   l('Download Final Report', 'hackathon-submission/generate-report/final-submission/' . $final_submission_data->id) . ' | ' . l('Edit Final Report', 'hackathon-submission/edit/final-submission/' . $final_submission_data->id) . ' | ' . l('Edit Project files', 'hackathon-submission/edit/project-files/' . $my_proposals_data->id);
+
             $creation_date = date('d-m-Y', $final_submission_data->creation_date);
         }
     }
-    $final_submission_rows[$final_submission_data->id] = array(
-        $creation_date,
-        l($my_proposals_data->participant_name, 'user/' . $my_proposals_data->uid),
-        $my_proposals_data->circuit_name,
-        $action
-    );
+    // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $final_submission_rows[$final_submission_data->id] = array(
+//         $creation_date,
+//         l($my_proposals_data->participant_name, 'user/' . $my_proposals_data->uid),
+//         $my_proposals_data->circuit_name,
+//         $action
+//     );
+
     /* check if there are any pending proposals */
      //!$pending_rows
     $final_submission_header = array(
@@ -757,30 +784,51 @@ function hackathon_submission_display_my_submissions()
     );
     //$output = theme_table($pending_header, $pending_rows);
     
-    $output .= theme('table', array(
-        'header' => $final_submission_header,
-        'rows' => $final_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $final_submission_header,
+//         'rows' => $final_submission_rows
+//     ));
+
     
     $output .= "<p>Literature Survey</p>";
     $my_proposal_rows = array();
     $last_date = "2021-06-21 23:59:59.0";
     if($today > $last_date){
-        $action =   l('Download Literature Survey Report', 'hackathon-submission/generate-report/literature-survey/' . $my_proposals_data->id);  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =   l('Download Literature Survey Report', 'hackathon-submission/generate-report/literature-survey/' . $my_proposals_data->id);
+  
     }
     else{
-    $action =   l('Download Literature Survey Report', 'hackathon-submission/generate-report/literature-survey/' . $my_proposals_data->id) . ' | ' . l('Edit', 'hackathon-submission/edit/literature-report/' . $my_proposals_data->id);
+    // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =   l('Download Literature Survey Report', 'hackathon-submission/generate-report/literature-survey/' . $my_proposals_data->id) . ' | ' . l('Edit', 'hackathon-submission/edit/literature-report/' . $my_proposals_data->id);
+
     }
-    $my_proposal_rows[$my_proposals_data->id] = array(
-        date('d-m-Y', $my_proposals_data->creation_date),
-        l($my_proposals_data->participant_name, 'user/' . $my_proposals_data->uid),
-        $my_proposals_data->circuit_name,
-        $action
-    );
+    // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_proposal_rows[$my_proposals_data->id] = array(
+//         date('d-m-Y', $my_proposals_data->creation_date),
+//         l($my_proposals_data->participant_name, 'user/' . $my_proposals_data->uid),
+//         $my_proposals_data->circuit_name,
+//         $action
+//     );
+
     /* check if there are any pending proposals */
     if (!$my_proposal_rows)
     {
-        drupal_set_message(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'), 'status');
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// \Drupal::messenger()->addStatus(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'));
+
         return '';
     } //!$pending_rows
     $my_proposal_header = array(
@@ -790,27 +838,36 @@ function hackathon_submission_display_my_submissions()
         ''
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_proposal_header,
-        'rows' => $my_proposal_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_proposal_header,
+//         'rows' => $my_proposal_rows
+//     ));
+
     return $output;
 }
 
 
 function hackathon_submission_display_all_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending submissions to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $my_submission_rows = array();
-    $query = db_select('hackathon_literature_survey');
+    $query = \Drupal::database()->select('hackathon_literature_survey');
     $query->fields('hackathon_literature_survey');
     //$query->condition('approval_status', 2);
     //$query->condition('uid',$user->uid);
@@ -819,25 +876,34 @@ function hackathon_submission_display_all_submissions()
     $output = "<p>Total number of submissions: " . $my_submissions_q->rowCount() . "</p><p>Click <a href='download-emails'>here</a> to download the Email IDs of the participants";
     while ($my_submissions_data = $my_submissions_q->fetchObject())
     {
-        $query = db_select('hackathon_final_submission');
+        $query = \Drupal::database()->select('hackathon_final_submission');
         $query->fields('hackathon_final_submission');
         //$query->condition('approval_status', 2);
         $query->condition('literature_survey_id',$my_submissions_data->id);
         $query->orderBy('id', 'DESC');
         $final_submissions_q = $query->execute();
         $final_submission_data = $final_submissions_q->fetchObject();
-        $action =   l('Download Literature Survey Report', 'hackathon-submission/generate-report/literature-survey/' . $my_submissions_data->id);  
-        $my_submission_rows[$my_submissions_data->id] = array(
-            date('d-m-Y', $my_submissions_data->creation_date),
-            l($my_submissions_data->participant_name, 'user/' . $my_submissions_data->uid),
-            $my_submissions_data->circuit_name,
-            $action
-        );
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =   l('Download Literature Survey Report', 'hackathon-submission/generate-report/literature-survey/' . $my_submissions_data->id);
+  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_submission_rows[$my_submissions_data->id] = array(
+//             date('d-m-Y', $my_submissions_data->creation_date),
+//             l($my_submissions_data->participant_name, 'user/' . $my_submissions_data->uid),
+//             $my_submissions_data->circuit_name,
+//             $action
+//         );
+
     } //$pending_data = $pending_q->fetchObject()
     /* check if there are any pending submissions */
     if (!$my_submission_rows)
     {
-        drupal_set_message(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'), 'status');
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// \Drupal::messenger()->addStatus(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'));
+
         return '';
     } //!$pending_rows
     $my_submission_header = array(
@@ -847,10 +913,19 @@ function hackathon_submission_display_all_submissions()
         ''
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_submission_header,
-        'rows' => $my_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_submission_header,
+//         'rows' => $my_submission_rows
+//     ));
+
     return $output;
 }
 
@@ -858,17 +933,17 @@ function hackathon_submission_display_all_submissions()
 
 function hackathon_submission_display_final_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending submissions to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $my_submission_rows = array();
-    $query = db_select('hackathon_final_submission');
+    $query = \Drupal::database()->select('hackathon_final_submission');
     $query->fields('hackathon_final_submission');
     //$query->condition('approval_status', 2);
     //$query->condition('uid',$user->uid);
@@ -877,25 +952,34 @@ function hackathon_submission_display_final_submissions()
     $output = "<p>Total number of submissions: " . $my_submissions_q->rowCount();
     while ($my_submissions_data = $my_submissions_q->fetchObject())
     {
-        $query = db_select('hackathon_literature_survey');
+        $query = \Drupal::database()->select('hackathon_literature_survey');
         $query->fields('hackathon_literature_survey');
         //$query->condition('approval_status', 2);
         $query->condition('id',$my_submissions_data->literature_survey_id);
         $query->orderBy('id', 'DESC');
         $final_submissions_q = $query->execute();
         $final_submission_data = $final_submissions_q->fetchObject();
-        $action =  l('Edit submission', 'hackathon-submission/manage/edit-submission/' . $final_submission_data->id) . ' | ' . l('Download Final Report', 'hackathon-submission/generate-report/final-submission/' . $my_submissions_data->id) . ' | ' . l('View Submission Details', 'hackathon-submission/view-details/final-submission/' . $final_submission_data->id) . ' | ' . l('Download Project Files', 'hackathon-submission/download/project-files/' . $final_submission_data->id);  
-        $my_submission_rows[$my_submissions_data->id] = array(
-            date('d-m-Y', $my_submissions_data->creation_date),
-            l($final_submission_data->participant_name, 'user/' . $final_submission_data->uid),
-            $final_submission_data->circuit_name,
-            $action
-        );
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =  l('Edit submission', 'hackathon-submission/manage/edit-submission/' . $final_submission_data->id) . ' | ' . l('Download Final Report', 'hackathon-submission/generate-report/final-submission/' . $my_submissions_data->id) . ' | ' . l('View Submission Details', 'hackathon-submission/view-details/final-submission/' . $final_submission_data->id) . ' | ' . l('Download Project Files', 'hackathon-submission/download/project-files/' . $final_submission_data->id);
+  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_submission_rows[$my_submissions_data->id] = array(
+//             date('d-m-Y', $my_submissions_data->creation_date),
+//             l($final_submission_data->participant_name, 'user/' . $final_submission_data->uid),
+//             $final_submission_data->circuit_name,
+//             $action
+//         );
+
     } //$pending_data = $pending_q->fetchObject()
     /* check if there are any pending submissions */
     if (!$my_submission_rows)
     {
-        drupal_set_message(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'), 'status');
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// \Drupal::messenger()->addStatus(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'));
+
         return '';
     } //!$pending_rows
     $my_submission_header = array(
@@ -905,24 +989,33 @@ function hackathon_submission_display_final_submissions()
         ''
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_submission_header,
-        'rows' => $my_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_submission_header,
+//         'rows' => $my_submission_rows
+//     ));
+
     return $output;
 }
 
 
 function hackathon_submission_view_final_submissions_details_form($form, &$form_state)
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get current proposal */
     $submission_id = (int) arg(3);
-    $submission_q = db_query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
+    $submission_q = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
         ':id' => $submission_id
     ));
     $submission_data = $submission_q->fetchObject();
-    $final_submission_q = db_query("SELECT * FROM {hackathon_final_submission} WHERE literature_survey_id = :literature_survey_id", array(
+    $final_submission_q = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission} WHERE literature_survey_id = :literature_survey_id", array(
         ':literature_survey_id' => $submission_id
     ));
     $final_submission_data = $final_submission_q->fetchObject();
@@ -953,27 +1046,30 @@ function hackathon_submission_view_final_submissions_details_form($form, &$form_
         '#markup' => $final_submission_data->circuit_details,
         '#title' => t('Circuit Details')
     );
-    $form['cancel'] = array(
-        '#type' => 'markup',
-        '#markup' => l(t('Cancel'), 'hackathon-submission/all-submissions')
-    );
+    // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $form['cancel'] = array(
+//         '#type' => 'markup',
+//         '#markup' => l(t('Cancel'), 'hackathon-submission/all-submissions')
+//     );
+
     return $form;
 }
 
 
 function hackathon_submission_download_emails(){
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending submissions to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to download the email IDs of the participants. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to download the email IDs of the participants. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $root_path = hackathon_submission_files_path();
     $my_submission_rows = array();
-    $query = db_select('hackathon_literature_survey');
+    $query = \Drupal::database()->select('hackathon_literature_survey');
     $query->fields('hackathon_literature_survey');
     //$query->condition('approval_status', 2);
     //$query->condition('uid',$user->uid);
@@ -1017,17 +1113,17 @@ function hackathon_submission_download_emails(){
 
 function hackathon_submission_download_project_files()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     $submission_id = arg(3);
     $root_path = hackathon_submission_files_path();
     //var_dump($root_path);die;
-    $query = db_select('hackathon_literature_survey');
+    $query = \Drupal::database()->select('hackathon_literature_survey');
     $query->fields('hackathon_literature_survey');
     $query->condition('id', $submission_id);
     $submission_q = $query->execute();
     $submission_data = $submission_q->fetchObject();
     $directory_path = $submission_data->directory_name . '/';
-    $query = db_select('hackathon_final_submission');
+    $query = \Drupal::database()->select('hackathon_final_submission');
     $query->fields('hackathon_final_submission');
     $query->condition('literature_survey_id', $submission_id);
     $final_submission_q = $query->execute();
@@ -1041,7 +1137,7 @@ function hackathon_submission_download_project_files()
     /* creating zip archive on the server */
     $zip = new ZipArchive();
     $zip->open($zip_filename, ZipArchive::CREATE);
-    $query = db_select('hackathon_final_submission_project_files');
+    $query = \Drupal::database()->select('hackathon_final_submission_project_files');
     $query->fields('hackathon_final_submission_project_files');
     $query->condition('literature_submission_id', $submission_id);
     $project_files_q = $query->execute();
@@ -1089,26 +1185,26 @@ function hackathon_submission_download_project_files()
         }
     } //$zip_file_count > 0
     else {
-        drupal_set_message("There are no files in this circuit to download", 'error');
+        \Drupal::messenger()->addError("There are no files in this circuit to download");
         drupal_goto('hackathon-submission/all-submissions');
     }
 }
 
 function hackathon_submission_download_completed_circuit()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     $submission_id = arg(3);
     //var_dump($submission_id);die;
     $root_path = hackathon_submission_files_path();
     //var_dump($root_path);die;
-    $query = db_select('hackathon_literature_survey');
+    $query = \Drupal::database()->select('hackathon_literature_survey');
     $query->fields('hackathon_literature_survey');
     $query->condition('id', $submission_id);
     $submission_q = $query->execute();
     $submission_data = $submission_q->fetchObject();
     //var_dump($submission_data);die;
     $directory_path = $submission_data->directory_name . '/';
-    $query = db_select('hackathon_final_submission');
+    $query = \Drupal::database()->select('hackathon_final_submission');
     $query->fields('hackathon_final_submission');
     $query->condition('literature_survey_id', $submission_id);
     $final_submission_q = $query->execute();
@@ -1122,7 +1218,7 @@ function hackathon_submission_download_completed_circuit()
     /* creating zip archive on the server */
     $zip = new ZipArchive();
     $zip->open($zip_filename, ZipArchive::CREATE);
-    $query = db_select('hackathon_final_submission_project_files');
+    $query = \Drupal::database()->select('hackathon_final_submission_project_files');
     $query->fields('hackathon_final_submission_project_files');
     $query->condition('literature_submission_id', $submission_id);
     $project_files_q = $query->execute();
@@ -1163,14 +1259,14 @@ function hackathon_submission_download_completed_circuit()
         }
     } //$zip_file_count > 0
     else {
-        drupal_set_message("There are no files in this circuit to download", 'error');
+        \Drupal::messenger()->addError("There are no files in this circuit to download");
         drupal_goto('');
     }
 }
 
 function create_zip_of_all_files(){
     $root_path  = hackathon_submission_files_path();
-    $query = db_query("SELECT p.literature_submission_id, l.circuit_name, l.participant_name
+    $query = \Drupal::database()->query("SELECT p.literature_submission_id, l.circuit_name, l.participant_name
             FROM hackathon_final_submission_project_files as p
             LEFT JOIN hackathon_literature_survey as l
             ON l.id = p.literature_submission_id where p.literature_submission_id in 
@@ -1202,17 +1298,17 @@ function create_zip_of_all_files(){
 
 function hackathon_submission_download_all_files($submission_id)
 {
-    global $user;
+    $user = \Drupal::currentUser();
     $submission_id = $submission_id;
     $root_path = hackathon_submission_files_path();
     //var_dump($root_path);die;
-    $query = db_select('hackathon_literature_survey');
+    $query = \Drupal::database()->select('hackathon_literature_survey');
     $query->fields('hackathon_literature_survey');
     $query->condition('id', $submission_id);
     $submission_q = $query->execute();
     $submission_data = $submission_q->fetchObject();
     $directory_path = $submission_data->directory_name . '/';
-    $query = db_select('hackathon_final_submission');
+    $query = \Drupal::database()->select('hackathon_final_submission');
     $query->fields('hackathon_final_submission');
     $query->condition('literature_survey_id', $submission_id);
     $final_submission_q = $query->execute();
@@ -1226,7 +1322,7 @@ function hackathon_submission_download_all_files($submission_id)
     /* creating zip archive on the server */
     $zip = new ZipArchive();
     $zip->open($zip_filename, ZipArchive::CREATE);
-    $query = db_select('hackathon_final_submission_project_files');
+    $query = \Drupal::database()->select('hackathon_final_submission_project_files');
     $query->fields('hackathon_final_submission_project_files');
     $query->condition('literature_submission_id', $submission_id);
     $project_files_q = $query->execute();
@@ -1353,13 +1449,13 @@ function generate_ls_latex_files($id){
     $reference_filedata = "";
     $eol = "\n";
     $sep = "#";
-    $submission_q = db_query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
+    $submission_q = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
         ':id' => $submission_id
     ));
     $submission_data = $submission_q->fetchObject();
     if (!$submission_data)
     {
-        drupal_set_message('Invalid submission specified.', 'error');
+        \Drupal::messenger()->addError('Invalid submission specified.');
         drupal_goto('');
     } //!$preference_data
     $submission_circuit_filedata = $submission_data->circuit_name . $sep . $submission_data->participant_name . $sep . $submission_data->institute . $sep . $submission_data->abstract . $sep . $submission_data->circuit_details . $eol;
@@ -1370,18 +1466,18 @@ function generate_ls_latex_files($id){
         // download PDF file 
         unlink($dir_path . $submission_data->id . "_literature_survey_report.pdf");
     }//file_exists($dir_path . "book_" . $preference_data->id . ".pdf")
-    $circuit_diagram_q  = db_query("SELECT * FROM {hackathon_literature_survey_files} WHERE submission_id = :id and filetype = :filetype", array(
+    $circuit_diagram_q  = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey_files} WHERE submission_id = :id and filetype = :filetype", array(
         ':id' => $submission_data->id,
         ':filetype' => 'C'
     ));
     $circuit_diagram_path = $root_path . $circuit_diagram_q->fetchObject()->filepath;
-    $waveform_q  = db_query("SELECT * FROM {hackathon_literature_survey_files} WHERE submission_id = :id and filetype = :filetype", array(
+    $waveform_q  = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey_files} WHERE submission_id = :id and filetype = :filetype", array(
         ':id' => $submission_data->id,
         ':filetype' => 'W'
     ));
     $waveform_path = $root_path . $waveform_q->fetchObject()->filepath;
 
-    $bib_references_q  = db_query("SELECT * FROM {hackathon_literature_survey_bib_references} WHERE submission_id = :id", array(
+    $bib_references_q  = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey_bib_references} WHERE submission_id = :id", array(
         ':id' => $submission_data->id,
     ));
         /*while ($submission_files_data = $submission_files_q->fetchObject())
@@ -1504,17 +1600,17 @@ function generate_fs_latex_files($id){
     $reference_filedata = "";
     $eol = "\n";
     $sep = "#";
-    $final_submission_q = db_query("SELECT * FROM {hackathon_final_submission} WHERE id = :id", array(
+    $final_submission_q = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission} WHERE id = :id", array(
         ':id' => $final_submission_id
     ));
     $final_submission_data = $final_submission_q->fetchObject();
-    $submission_q = db_query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
+    $submission_q = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
         ':id' => $final_submission_data->literature_survey_id
     ));
     $submission_data = $submission_q->fetchObject();
     if (!$final_submission_data)
     {
-        drupal_set_message('Invalid submission specified.', 'error');
+        \Drupal::messenger()->addError('Invalid submission specified.');
         drupal_goto('');
     } //!$preference_data
     //$final_submission_circuit_filedata = $submission_data->circuit_name . $sep . $final_submission_data->participant_name . $sep . $final_submission_data->institute . $sep . $final_submission_data->abstract . $sep . $final_submission_data->circuit_details . $eol;
@@ -1525,18 +1621,18 @@ function generate_fs_latex_files($id){
         // download PDF file 
         unlink($dir_path . $submission_data->id . "_final_submission_report.pdf");
     }//file_exists($dir_path . "book_" . $preference_data->id . ".pdf")
-    $circuit_diagram_q  = db_query("SELECT * FROM {hackathon_final_submission_files} WHERE final_submission_id = :id and filetype = :filetype", array(
+    $circuit_diagram_q  = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission_files} WHERE final_submission_id = :id and filetype = :filetype", array(
         ':id' => $final_submission_data->id,
         ':filetype' => 'C'
     ));
     $circuit_diagram_path = $root_path . $circuit_diagram_q->fetchObject()->filepath;
-    $waveform_q  = db_query("SELECT * FROM {hackathon_final_submission_files} WHERE final_submission_id = :id and filetype = :filetype", array(
+    $waveform_q  = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission_files} WHERE final_submission_id = :id and filetype = :filetype", array(
         ':id' => $final_submission_data->id,
         ':filetype' => 'W'
     ));
     $waveform_path = $root_path . $waveform_q->fetchObject()->filepath;
 
-    $bib_references_q  = db_query("SELECT * FROM {hackathon_final_submission_bib_references} WHERE final_submission_id = :id", array(
+    $bib_references_q  = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission_bib_references} WHERE final_submission_id = :id", array(
         ':id' => $final_submission_data->id,
     ));
         /*while ($final_submission_files_data = $final_submission_files_q->fetchObject())
@@ -1654,28 +1750,28 @@ exec($sh_command);
 
 function mscd_submission_display_my_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending proposals to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view your proposals. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view your proposals. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $output = "";
     $final_submission_rows = array();
-    $query = db_select('mixed_signal_marathon_literature_survey');
+    $query = \Drupal::database()->select('mixed_signal_marathon_literature_survey');
     $query->fields('mixed_signal_marathon_literature_survey');
     $query->condition('uid',$user->uid);
     $query->orderBy('id', 'DESC');
     $my_proposals_q = $query->execute();
     $my_proposals_data = $my_proposals_q->fetchObject();
     if(!$my_proposals_data){
-        drupal_set_message('We have not received your submission', 'error');
+        \Drupal::messenger()->addError('We have not received your submission');
         drupal_goto('');
     }
-    $query = db_select('mixed_signal_marathon_final_submission');
+    $query = \Drupal::database()->select('mixed_signal_marathon_final_submission');
     $query->fields('mixed_signal_marathon_final_submission');
     $query->condition('uid',$user->uid);
     $query->condition('literature_survey_id', $my_proposals_data->id);
@@ -1683,33 +1779,58 @@ function mscd_submission_display_my_submissions()
     $final_submission_q = $query->execute();
     $final_submission_data = $final_submission_q->fetchObject();
     $today = date("Y-m-d H:i:s");
-    $final_submission_last_date = variable_get('mscd_final_submission_last_date', '');
+    // @FIXME
+// // @FIXME
+// // This looks like another module's variable. You'll need to rewrite this call
+// // to ensure that it uses the correct configuration object.
+// $final_submission_last_date = variable_get('mscd_final_submission_last_date', '');
+
     if($today > $final_submission_last_date){
-        $final_submission_action =   l('View', 'mixed-signal-design-marathon/view/final-submission/' . $my_proposals_data->id);  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $final_submission_action =   l('View', 'mixed-signal-design-marathon/view/final-submission/' . $my_proposals_data->id);
+  
        // $creation_date = date('d-m-Y', $final_submission_data->creation_date);
     }
     else{
         if(!$final_submission_data){
-            $final_submission_action =   l('Add Final Submission', 'mixed-signal-soc-design-marathon/add/final-submission');
+            // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $final_submission_action =   l('Add Final Submission', 'mixed-signal-soc-design-marathon/add/final-submission');
+
             //$final_submission_action =   "Closed";
             //$creation_date = "Final Submission not received";
         }
         else{
-            $final_submission_action =  l('View', 'mixed-signal-design-marathon/view/final-submission/' . $my_proposals_data->id) . ' | ' . l('Edit', 'mixed-signal-design-marathon/edit/final-submission/' . $my_proposals_data->id);
+            // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $final_submission_action =  l('View', 'mixed-signal-design-marathon/view/final-submission/' . $my_proposals_data->id) . ' | ' . l('Edit', 'mixed-signal-design-marathon/edit/final-submission/' . $my_proposals_data->id);
+
            // $creation_date = date('d-m-Y', $final_submission_data->creation_date);
         }
     } 
     
     //$output .= "<p>Literature Survey</p>";
     $my_proposal_rows = array();
-    $last_date = variable_get('mscd_literature_report_last_date', '');
+    // @FIXME
+// // @FIXME
+// // This looks like another module's variable. You'll need to rewrite this call
+// // to ensure that it uses the correct configuration object.
+// $last_date = variable_get('mscd_literature_report_last_date', '');
+
     $today = date("Y-m-d H:i:s");
     //var_dump($submission_id);die;
     if($today > $last_date){
-        $literature_survey_action = l('View', 'mixed-signal-design-marathon/view/literature-report/' . $my_proposals_data->id);
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $literature_survey_action = l('View', 'mixed-signal-design-marathon/view/literature-report/' . $my_proposals_data->id);
+
     }
     else{
-        $literature_survey_action = l('View', 'mixed-signal-design-marathon/view/literature-report/' . $my_proposals_data->id) . ' | ' . l('Edit', 'mixed-signal-design-marathon/edit/literature-report/' . $my_proposals_data->id);
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $literature_survey_action = l('View', 'mixed-signal-design-marathon/view/literature-report/' . $my_proposals_data->id) . ' | ' . l('Edit', 'mixed-signal-design-marathon/edit/literature-report/' . $my_proposals_data->id);
+
     }
     if(!$final_submission_data->creation_date){
         $final_submission_date = 'Not yet uploaded';
@@ -1717,18 +1838,24 @@ function mscd_submission_display_my_submissions()
     else{
         $final_submission_date = date('d-m-Y', $final_submission_data->creation_date);
     }
-    $my_proposal_rows[$my_proposals_data->id] = array(
-        date('d-m-Y', $my_proposals_data->creation_date),
-        $final_submission_date,
-        l($my_proposals_data->participant_name, 'user/' . $my_proposals_data->uid),
-        $my_proposals_data->circuit_name,
-        $literature_survey_action,
-        $final_submission_action
-    );
+    // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_proposal_rows[$my_proposals_data->id] = array(
+//         date('d-m-Y', $my_proposals_data->creation_date),
+//         $final_submission_date,
+//         l($my_proposals_data->participant_name, 'user/' . $my_proposals_data->uid),
+//         $my_proposals_data->circuit_name,
+//         $literature_survey_action,
+//         $final_submission_action
+//     );
+
     /* check if there are any pending proposals */
     if (!$my_proposal_rows)
     {
-        drupal_set_message(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'), 'status');
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// \Drupal::messenger()->addStatus(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'));
+
         return '';
     } //!$pending_rows
     $my_proposal_header = array(
@@ -1740,45 +1867,60 @@ function mscd_submission_display_my_submissions()
         'Final Submission'
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_proposal_header,
-        'rows' => $my_proposal_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_proposal_header,
+//         'rows' => $my_proposal_rows
+//     ));
+
     return $output;
 }
 
 
 function mscd_display_literature_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending submissions to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $my_submission_rows = array();
-    $query = db_select('mixed_signal_marathon_literature_survey');
+    $query = \Drupal::database()->select('mixed_signal_marathon_literature_survey');
     $query->fields('mixed_signal_marathon_literature_survey');
     $query->orderBy('id', 'DESC');
     $my_submissions_q = $query->execute();
     $output = "<p>Total number of submissions: " . $my_submissions_q->rowCount() . "</p><p>Click <a href='download-emails'>here</a> to download the Email IDs of the participants";
     while ($my_submissions_data = $my_submissions_q->fetchObject())
     {
-        $literature_survey_action =   l('View', 'mixed-signal-design-marathon/view/literature-report/' . $my_submissions_data->id);  
-        $my_submission_rows[$my_submissions_data->id] = array(
-            date('d-m-Y', $my_submissions_data->creation_date),
-            l($my_submissions_data->participant_name, 'user/' . $my_submissions_data->uid),
-            $my_submissions_data->circuit_name,
-            $literature_survey_action,
-        );
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $literature_survey_action =   l('View', 'mixed-signal-design-marathon/view/literature-report/' . $my_submissions_data->id);
+  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_submission_rows[$my_submissions_data->id] = array(
+//             date('d-m-Y', $my_submissions_data->creation_date),
+//             l($my_submissions_data->participant_name, 'user/' . $my_submissions_data->uid),
+//             $my_submissions_data->circuit_name,
+//             $literature_survey_action,
+//         );
+
     } //$pending_data = $pending_q->fetchObject()
     /* check if there are any pending submissions */
     if (!$my_submission_rows)
     {
-        drupal_set_message(t('There are no active submissions yet.'), 'status');
+        \Drupal::messenger()->addStatus(t('There are no active submissions yet.'));
         return '';
     } //!$pending_rows
     $my_submission_header = array(
@@ -1788,49 +1930,64 @@ function mscd_display_literature_submissions()
         'Literature Survey',
         );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_submission_header,
-        'rows' => $my_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_submission_header,
+//         'rows' => $my_submission_rows
+//     ));
+
     return $output;
 }
 function mscd_display_final_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending submissions to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $my_submission_rows = array();
-    $query = db_select('mixed_signal_marathon_final_submission');
+    $query = \Drupal::database()->select('mixed_signal_marathon_final_submission');
     $query->fields('mixed_signal_marathon_final_submission');
     $query->orderBy('id', 'DESC');
     $my_submissions_q = $query->execute();
     $output = "<p>Total number of submissions: " . $my_submissions_q->rowCount();
     while ($my_submissions_data = $my_submissions_q->fetchObject())
     {
-        $query = db_select('mixed_signal_marathon_literature_survey');
+        $query = \Drupal::database()->select('mixed_signal_marathon_literature_survey');
         $query->fields('mixed_signal_marathon_literature_survey');
         $query->condition('id',$my_submissions_data->literature_survey_id);
         $query->orderBy('id', 'DESC');
         $final_submissions_q = $query->execute();
         $final_submission_data = $final_submissions_q->fetchObject();
-        $action =  l('View', 'mixed-signal-design-marathon/view/final-submission/' . $final_submission_data->id);  
-        $my_submission_rows[$my_submissions_data->id] = array(
-            date('d-m-Y', $my_submissions_data->creation_date),
-            l($final_submission_data->participant_name, 'user/' . $final_submission_data->uid),
-            $final_submission_data->circuit_name,
-            $action
-        );
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =  l('View', 'mixed-signal-design-marathon/view/final-submission/' . $final_submission_data->id);
+  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_submission_rows[$my_submissions_data->id] = array(
+//             date('d-m-Y', $my_submissions_data->creation_date),
+//             l($final_submission_data->participant_name, 'user/' . $final_submission_data->uid),
+//             $final_submission_data->circuit_name,
+//             $action
+//         );
+
     } //$pending_data = $pending_q->fetchObject()
     /* check if there are any pending submissions */
     if (!$my_submission_rows)
     {
-        drupal_set_message(t('There are no active submissions'), 'status');
+        \Drupal::messenger()->addStatus(t('There are no active submissions'));
         return '';
     } //!$pending_rows
     $my_submission_header = array(
@@ -1840,17 +1997,26 @@ function mscd_display_final_submissions()
         'Final Submission'
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_submission_header,
-        'rows' => $my_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_submission_header,
+//         'rows' => $my_submission_rows
+//     ));
+
     return $output;
 }
 
 function mscd_hackathon_submission_download_completed_circuit()
 {
     $output = "";
-    $query = db_select('mixed_signal_marathon_final_submission');
+    $query = \Drupal::database()->select('mixed_signal_marathon_final_submission');
     $query->fields('mixed_signal_marathon_final_submission');
     $query->condition('approval_status', 3);
     $query->orderBy('id', 'DESC');
@@ -1880,27 +2046,30 @@ More details about this event can be found here: <a href='https://hackathon.foss
 
         while ($my_submissions_data = $result->fetchObject())
     {
-        $query = db_select('mixed_signal_marathon_literature_survey');
+        $query = \Drupal::database()->select('mixed_signal_marathon_literature_survey');
         $query->fields('mixed_signal_marathon_literature_survey');
         $query->condition('id',$my_submissions_data->literature_survey_id);
         $query->orderBy('id', 'DESC');
         $final_submissions_q = $query->execute();
         $final_submission_data = $final_submissions_q->fetchObject();
         //$action =  l('View', 'mixed-signal-design-marathon/view/final-submission/' . $final_submission_data->id);  
-        $my_submission_rows[$my_submissions_data->id] = 
-        array(
-            $i,
-            l($final_submission_data->circuit_name, 'mixed-signal-design-marathon/download/circuits/' . $final_submission_data->id),
-            $final_submission_data->participant_name,
-            $final_submission_data->institute
-            //$action
-        );
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_submission_rows[$my_submissions_data->id] =
+//         array(
+//             $i,
+//             l($final_submission_data->circuit_name, 'mixed-signal-design-marathon/download/circuits/' . $final_submission_data->id),
+//             $final_submission_data->participant_name,
+//             $final_submission_data->institute
+//             //$action
+//         );
+
         $i--;
     } //$pending_data = $pending_q->fetchObject()
     /* check if there are any pending submissions */
     if (!$my_submission_rows)
     {
-        drupal_set_message(t('There are no active submissions'), 'status');
+        \Drupal::messenger()->addStatus(t('There are no active submissions'));
         return '';
     } //!$pending_rows
     $my_submission_header = array(
@@ -1911,10 +2080,19 @@ More details about this event can be found here: <a href='https://hackathon.foss
         //'Final Submission'
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_submission_header,
-        'rows' => $my_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_submission_header,
+//         'rows' => $my_submission_rows
+//     ));
+
     return $output;
 }
 }
@@ -1922,41 +2100,47 @@ More details about this event can be found here: <a href='https://hackathon.foss
 
 function soc_marathon_display_final_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending submissions to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $my_submission_rows = array();
-    $query = db_select('mixed_signal_soc_marathon_final_submission');
+    $query = \Drupal::database()->select('mixed_signal_soc_marathon_final_submission');
     $query->fields('mixed_signal_soc_marathon_final_submission');
     $query->orderBy('id', 'DESC');
     $my_submissions_q = $query->execute();
     $output = "<p>Total number of submissions: " . $my_submissions_q->rowCount();
     while ($my_submissions_data = $my_submissions_q->fetchObject())
     {
-        $query = db_select('mixed_signal_soc_marathon_literature_survey');
+        $query = \Drupal::database()->select('mixed_signal_soc_marathon_literature_survey');
         $query->fields('mixed_signal_soc_marathon_literature_survey');
         $query->condition('id',$my_submissions_data->literature_survey_id);
         $query->orderBy('id', 'DESC');
         $final_submissions_q = $query->execute();
         $final_submission_data = $final_submissions_q->fetchObject();
-        $action =  l('View', 'mixed-signal-soc-design-marathon/view/final-submission/' . $final_submission_data->id);  
-        $my_submission_rows[$my_submissions_data->id] = array(
-            date('d-m-Y', $my_submissions_data->creation_date),
-            l($final_submission_data->participant_name, 'user/' . $final_submission_data->uid),
-            $final_submission_data->circuit_name,
-            $action
-        );
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $action =  l('View', 'mixed-signal-soc-design-marathon/view/final-submission/' . $final_submission_data->id);
+  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_submission_rows[$my_submissions_data->id] = array(
+//             date('d-m-Y', $my_submissions_data->creation_date),
+//             l($final_submission_data->participant_name, 'user/' . $final_submission_data->uid),
+//             $final_submission_data->circuit_name,
+//             $action
+//         );
+
     } //$pending_data = $pending_q->fetchObject()
     /* check if there are any pending submissions */
     if (!$my_submission_rows)
     {
-        drupal_set_message(t('There are no active submissions'), 'status');
+        \Drupal::messenger()->addStatus(t('There are no active submissions'));
         return '';
     } //!$pending_rows
     $my_submission_header = array(
@@ -1966,43 +2150,58 @@ function soc_marathon_display_final_submissions()
         'Final Submission'
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_submission_header,
-        'rows' => $my_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_submission_header,
+//         'rows' => $my_submission_rows
+//     ));
+
     return $output;
 }
 function soc_marathon_display_literature_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending submissions to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view all submissions. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $my_submission_rows = array();
-    $query = db_select('mixed_signal_soc_marathon_literature_survey');
+    $query = \Drupal::database()->select('mixed_signal_soc_marathon_literature_survey');
     $query->fields('mixed_signal_soc_marathon_literature_survey');
     $query->orderBy('id', 'DESC');
     $my_submissions_q = $query->execute();
     $output = "<p>Total number of submissions: " . $my_submissions_q->rowCount() . "</p><p>Click <a href='download-emails'>here</a> to download the Email IDs of the participants";
     while ($my_submissions_data = $my_submissions_q->fetchObject())
     {
-        $literature_survey_action =   l('View', 'mixed-signal-soc-design-marathon/view/literature-report/' . $my_submissions_data->id);  
-        $my_submission_rows[$my_submissions_data->id] = array(
-            date('d-m-Y', $my_submissions_data->creation_date),
-            l($my_submissions_data->participant_name, 'user/' . $my_submissions_data->uid),
-            $my_submissions_data->circuit_name,
-            $literature_survey_action,
-        );
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $literature_survey_action =   l('View', 'mixed-signal-soc-design-marathon/view/literature-report/' . $my_submissions_data->id);
+  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_submission_rows[$my_submissions_data->id] = array(
+//             date('d-m-Y', $my_submissions_data->creation_date),
+//             l($my_submissions_data->participant_name, 'user/' . $my_submissions_data->uid),
+//             $my_submissions_data->circuit_name,
+//             $literature_survey_action,
+//         );
+
     } //$pending_data = $pending_q->fetchObject()
     /* check if there are any pending submissions */
     if (!$my_submission_rows)
     {
-        drupal_set_message(t('There are no active submissions yet.'), 'status');
+        \Drupal::messenger()->addStatus(t('There are no active submissions yet.'));
         return '';
     } //!$pending_rows
     $my_submission_header = array(
@@ -2012,36 +2211,45 @@ function soc_marathon_display_literature_submissions()
         'Literature Survey',
         );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_submission_header,
-        'rows' => $my_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_submission_header,
+//         'rows' => $my_submission_rows
+//     ));
+
     return $output;
 }
 function soc_marathon_submission_display_my_submissions()
 {
-    global $user;
+    $user = \Drupal::currentUser();
     /* get pending proposals to be approved */
     if ($user->uid == 0)
     {
-        $msg = drupal_set_message(t('It is mandatory to login on this website to view your proposals. If you are new user please create a new account first.'), 'error');
+        $msg = \Drupal::messenger()->addError(t('It is mandatory to login on this website to view your proposals. If you are new user please create a new account first.'));
         //drupal_goto('/pssp');
         drupal_goto('user/login', array('query' => drupal_get_destination()));
         return $msg;
     }
     $output = "";
     $final_submission_rows = array();
-    $query = db_select('mixed_signal_soc_marathon_literature_survey');
+    $query = \Drupal::database()->select('mixed_signal_soc_marathon_literature_survey');
     $query->fields('mixed_signal_soc_marathon_literature_survey');
     $query->condition('uid',$user->uid);
     $query->orderBy('id', 'DESC');
     $my_proposals_q = $query->execute();
     $my_proposals_data = $my_proposals_q->fetchObject();
     if(!$my_proposals_data){
-        drupal_set_message('We have not received your submission', 'error');
+        \Drupal::messenger()->addError('We have not received your submission');
         drupal_goto('');
     }
-    $query = db_select('mixed_signal_soc_marathon_final_submission');
+    $query = \Drupal::database()->select('mixed_signal_soc_marathon_final_submission');
     $query->fields('mixed_signal_soc_marathon_final_submission');
     $query->condition('uid',$user->uid);
     $query->condition('literature_survey_id', $my_proposals_data->id);
@@ -2049,33 +2257,58 @@ function soc_marathon_submission_display_my_submissions()
     $final_submission_q = $query->execute();
     $final_submission_data = $final_submission_q->fetchObject();
     $today = date("Y-m-d H:i:s");
-    $final_submission_last_date = variable_get('soc_marathon_final_submission_last_date', '');
+    // @FIXME
+// // @FIXME
+// // This looks like another module's variable. You'll need to rewrite this call
+// // to ensure that it uses the correct configuration object.
+// $final_submission_last_date = variable_get('soc_marathon_final_submission_last_date', '');
+
     if($today > $final_submission_last_date){
-        $final_submission_action =   l('View', 'mixed-signal-soc-design-marathon/view/final-submission/' . $my_proposals_data->id);  
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $final_submission_action =   l('View', 'mixed-signal-soc-design-marathon/view/final-submission/' . $my_proposals_data->id);
+  
        // $creation_date = date('d-m-Y', $final_submission_data->creation_date);
     }
     else{
         if(!$final_submission_data){
-            $final_submission_action =   l('Add Final Submission', 'mixed-signal-soc-design-marathon/add/final-submission');
+            // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $final_submission_action =   l('Add Final Submission', 'mixed-signal-soc-design-marathon/add/final-submission');
+
             //$final_submission_action =   "Closed";
             //$creation_date = "Final Submission not received";
         }
         else{
-            $final_submission_action =  l('View', 'mixed-signal-soc-design-marathon/view/final-submission/' . $my_proposals_data->id) . ' | ' . l('Edit', 'mixed-signal-soc-design-marathon/edit/final-submission/' . $my_proposals_data->id);
+            // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $final_submission_action =  l('View', 'mixed-signal-soc-design-marathon/view/final-submission/' . $my_proposals_data->id) . ' | ' . l('Edit', 'mixed-signal-soc-design-marathon/edit/final-submission/' . $my_proposals_data->id);
+
            // $creation_date = date('d-m-Y', $final_submission_data->creation_date);
         }
     } 
     
     //$output .= "<p>Literature Survey</p>";
     $my_proposal_rows = array();
-    $last_date = variable_get('soc_marathon_literature_report_last_date', '');
+    // @FIXME
+// // @FIXME
+// // This looks like another module's variable. You'll need to rewrite this call
+// // to ensure that it uses the correct configuration object.
+// $last_date = variable_get('soc_marathon_literature_report_last_date', '');
+
     $today = date("Y-m-d H:i:s");
     //var_dump($submission_id);die;
     if($today > $last_date){
-        $literature_survey_action = l('View', 'mixed-signal-soc-design-marathon/view/literature-report/' . $my_proposals_data->id);
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $literature_survey_action = l('View', 'mixed-signal-soc-design-marathon/view/literature-report/' . $my_proposals_data->id);
+
     }
     else{
-        $literature_survey_action = l('View', 'mixed-signal-soc-design-marathon/view/literature-report/' . $my_proposals_data->id) . ' | ' . l('Edit', 'mixed-signal-soc-design-marathon/edit/literature-report/' . $my_proposals_data->id);
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $literature_survey_action = l('View', 'mixed-signal-soc-design-marathon/view/literature-report/' . $my_proposals_data->id) . ' | ' . l('Edit', 'mixed-signal-soc-design-marathon/edit/literature-report/' . $my_proposals_data->id);
+
     }
     if(!$final_submission_data->creation_date){
         $final_submission_date = 'Not yet uploaded';
@@ -2083,18 +2316,24 @@ function soc_marathon_submission_display_my_submissions()
     else{
         $final_submission_date = date('d-m-Y', $final_submission_data->creation_date);
     }
-    $my_proposal_rows[$my_proposals_data->id] = array(
-        date('d-m-Y', $my_proposals_data->creation_date),
-        $final_submission_date,
-        l($my_proposals_data->participant_name, 'user/' . $my_proposals_data->uid),
-        $my_proposals_data->circuit_name,
-        $literature_survey_action,
-        $final_submission_action
-    );
+    // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_proposal_rows[$my_proposals_data->id] = array(
+//         date('d-m-Y', $my_proposals_data->creation_date),
+//         $final_submission_date,
+//         l($my_proposals_data->participant_name, 'user/' . $my_proposals_data->uid),
+//         $my_proposals_data->circuit_name,
+//         $literature_survey_action,
+//         $final_submission_action
+//     );
+
     /* check if there are any pending proposals */
     if (!$my_proposal_rows)
     {
-        drupal_set_message(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'), 'status');
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// \Drupal::messenger()->addStatus(t('You do not have any active submissions. To submit, click ') . l('here', 'hackathon-submission/add/literature-report'));
+
         return '';
     } //!$pending_rows
     $my_proposal_header = array(
@@ -2106,17 +2345,26 @@ function soc_marathon_submission_display_my_submissions()
         'Final Submission'
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_proposal_header,
-        'rows' => $my_proposal_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_proposal_header,
+//         'rows' => $my_proposal_rows
+//     ));
+
     return $output;
 }
 
 function soc_marathon_download_completed_circuit()
 {
     $output = "";
-    $query = db_select('mixed_signal_soc_marathon_final_submission');
+    $query = \Drupal::database()->select('mixed_signal_soc_marathon_final_submission');
     $query->fields('mixed_signal_soc_marathon_final_submission');
     $query->condition('approval_status', 3);
     $query->orderBy('id', 'DESC');
@@ -2138,27 +2386,30 @@ More details about this event can be found here: <a href='https://hackathon.foss
 
         while ($my_submissions_data = $result->fetchObject())
     {
-        $query = db_select('mixed_signal_soc_marathon_literature_survey');
+        $query = \Drupal::database()->select('mixed_signal_soc_marathon_literature_survey');
         $query->fields('mixed_signal_soc_marathon_literature_survey');
         $query->condition('id',$my_submissions_data->literature_survey_id);
         $query->orderBy('id', 'DESC');
         $final_submissions_q = $query->execute();
         $final_submission_data = $final_submissions_q->fetchObject();
         //$action =  l('View', 'mixed-signal-design-marathon/view/final-submission/' . $final_submission_data->id);  
-        $my_submission_rows[$my_submissions_data->id] = 
-        array(
-            $i,
-            l($final_submission_data->circuit_name, 'mixed-signal-soc-design-marathon/download/circuits/' . $final_submission_data->id),
-            $final_submission_data->participant_name,
-            $final_submission_data->institute
-            //$action
-        );
+        // @FIXME
+// l() expects a Url object, created from a route name or external URI.
+// $my_submission_rows[$my_submissions_data->id] =
+//         array(
+//             $i,
+//             l($final_submission_data->circuit_name, 'mixed-signal-soc-design-marathon/download/circuits/' . $final_submission_data->id),
+//             $final_submission_data->participant_name,
+//             $final_submission_data->institute
+//             //$action
+//         );
+
         $i--;
     } //$pending_data = $pending_q->fetchObject()
     /* check if there are any pending submissions */
     if (!$my_submission_rows)
     {
-        drupal_set_message(t('There are no active submissions'), 'status');
+        \Drupal::messenger()->addStatus(t('There are no active submissions'));
         return '';
     } //!$pending_rows
     $my_submission_header = array(
@@ -2169,10 +2420,19 @@ More details about this event can be found here: <a href='https://hackathon.foss
         //'Final Submission'
     );
     //$output = theme_table($pending_header, $pending_rows);
-    $output .= theme('table', array(
-        'header' => $my_submission_header,
-        'rows' => $my_submission_rows
-    ));
+    // @FIXME
+// theme() has been renamed to _theme() and should NEVER be called directly.
+// Calling _theme() directly can alter the expected output and potentially
+// introduce security issues (see https://www.drupal.org/node/2195739). You
+// should use renderable arrays instead.
+// 
+// 
+// @see https://www.drupal.org/node/2195739
+// $output .= theme('table', array(
+//         'header' => $my_submission_header,
+//         'rows' => $my_submission_rows
+//     ));
+
     return $output;
 }
 }

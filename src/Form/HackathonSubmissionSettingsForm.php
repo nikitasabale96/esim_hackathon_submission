@@ -1,9 +1,28 @@
 <?php
-// $Id$
-function hackathon_submission_settings_form($form, $form_state)
-{
-	/************************** SoC Marathon date and extension settings **************************/
-	// @FIXME
+
+/**
+ * @file
+ * Contains \Drupal\hackathon_submission\Form\HackathonSubmissionSettingsForm.
+ */
+
+namespace Drupal\hackathon_submission\Form;
+
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+
+class HackathonSubmissionSettingsForm extends FormBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId() {
+    return 'hackathon_submission_settings_form';
+  }
+
+  public function buildForm(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    /************************** SoC Marathon date and extension settings **************************/
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -102,7 +121,7 @@ function hackathon_submission_settings_form($form, $form_state)
 //     );
 
     /************************* Settings for SoC marathon ends *****************************************/
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -116,7 +135,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('mscd_literature_report_extensions', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -130,7 +149,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('mscd_literature_report_start_date', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -144,7 +163,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('mscd_literature_report_last_date', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -158,7 +177,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('mscd_final_report_extensions', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -172,7 +191,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('mscd_project_files_extensions', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -186,7 +205,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('mscd_final_submission_start_date', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -200,7 +219,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('mscd_final_submission_last_date', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -214,7 +233,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('reference_circuit_extensions', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -228,7 +247,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('reference_waveform_extensions', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -242,7 +261,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('main_netlist_file_extensions', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -256,7 +275,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('subcircuit_file_extensions', '')
 // 	);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -270,7 +289,7 @@ function hackathon_submission_settings_form($form, $form_state)
 // 		'#default_value' => variable_get('readme_file_extensions', '')
 // 	);
 
-	/*$form['no_of_images_allowed_project_submission'] = array(
+    /*$form['no_of_images_allowed_project_submission'] = array(
 		'#type' => 'textfield',
 		'#title' => t('Enter the number of images that can be uploaded during project submission'),
 		'#size' => 50,
@@ -285,37 +304,37 @@ function hackathon_submission_settings_form($form, $form_state)
 		'#required' => TRUE,
 		'#default_value' => variable_get('project_design_files_extensions', '')
 	);*/
-	$form['submit'] = array(
-		'#type' => 'submit',
-		'#value' => t('Submit')
-	);
-	return $form;
-}
-function hackathon_submission_settings_form_validate($form, &$form_state)
-{
-	return;
-}
-function hackathon_submission_settings_form_submit($form, &$form_state)
-{
-	// @FIXME
+    $form['submit'] = [
+      '#type' => 'submit',
+      '#value' => t('Submit'),
+    ];
+    return $form;
+  }
+
+  public function validateForm(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    return;
+  }
+
+  public function submitForm(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('soc_marathon_literature_report_extensions', $form_state['values']['soc_marathon_literature_report_extensions']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('soc_marathon_literature_report_start_date', $form_state['values']['soc_marathon_literature_report_start_date']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('soc_marathon_literature_report_last_date', $form_state['values']['soc_marathon_literature_report_last_date']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
@@ -339,77 +358,80 @@ function hackathon_submission_settings_form_submit($form, &$form_state)
 // // to ensure that it uses the correct configuration object.
 // variable_set('soc_marathon_final_submission_last_date', $form_state['values']['soc_marathon_final_submission_last_date']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('mscd_literature_report_extensions', $form_state['values']['mscd_literature_report_extensions']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('mscd_literature_report_start_date', $form_state['values']['mscd_literature_report_start_date']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('mscd_literature_report_last_date', $form_state['values']['mscd_literature_report_last_date']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('mscd_final_report_extensions', $form_state['values']['mscd_final_report_extensions']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('mscd_project_files_extensions', $form_state['values']['mscd_project_files_extensions']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('mscd_final_submission_start_date', $form_state['values']['mscd_final_submission_start_date']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('mscd_final_submission_last_date', $form_state['values']['mscd_final_submission_last_date']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('reference_circuit_extensions', $form_state['values']['reference_circuit']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('reference_waveform_extensions', $form_state['values']['reference_waveform']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('main_netlist_file_extensions', $form_state['values']['main_netlist']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('subcircuit_file_extensions', $form_state['values']['sub_circuit_file']);
 
-	// @FIXME
+    // @FIXME
 // // @FIXME
 // // This looks like another module's variable. You'll need to rewrite this call
 // // to ensure that it uses the correct configuration object.
 // variable_set('readme_file_extensions', $form_state['values']['read_me']);
 
-	\Drupal::messenger()->addStatus(t('Settings updated'));
+    \Drupal::messenger()->addStatus(t('Settings updated'));
+  }
+
 }
+?>
