@@ -9,13 +9,13 @@ function download_literature_survey_report()
     $reference_filedata = "";
     $eol = "\n";
     $sep = "#";
-    $submission_q = db_query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
+    $submission_q = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
         ':id' => $submission_id
     ));
     $submission_data = $submission_q->fetchObject();
     if (!$submission_data)
     {
-        drupal_set_message('Invalid submission specified.', 'error');
+        \Drupal::messenger()->addError('Invalid submission specified.');
         drupal_goto('');
     } //!$preference_data
     $submission_circuit_filedata = $submission_data->circuit_name . $sep . $submission_data->participant_name . $sep . $submission_data->institute . $sep . $submission_data->abstract . $sep . $submission_data->circuit_details . $eol;
@@ -26,18 +26,18 @@ function download_literature_survey_report()
         // download PDF file 
         unlink($dir_path . $submission_data->id . "_literature_survey_report.pdf");
     }//file_exists($dir_path . "book_" . $preference_data->id . ".pdf")
-    $circuit_diagram_q  = db_query("SELECT * FROM {hackathon_literature_survey_files} WHERE submission_id = :id and filetype = :filetype", array(
+    $circuit_diagram_q  = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey_files} WHERE submission_id = :id and filetype = :filetype", array(
         ':id' => $submission_data->id,
         ':filetype' => 'C'
     ));
     $circuit_diagram_path = $root_path . $circuit_diagram_q->fetchObject()->filepath;
-    $waveform_q  = db_query("SELECT * FROM {hackathon_literature_survey_files} WHERE submission_id = :id and filetype = :filetype", array(
+    $waveform_q  = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey_files} WHERE submission_id = :id and filetype = :filetype", array(
         ':id' => $submission_data->id,
         ':filetype' => 'W'
     ));
     $waveform_path = $root_path . $waveform_q->fetchObject()->filepath;
 
-    $bib_references_q  = db_query("SELECT * FROM {hackathon_literature_survey_bib_references} WHERE submission_id = :id", array(
+    $bib_references_q  = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey_bib_references} WHERE submission_id = :id", array(
         ':id' => $submission_data->id,
     ));
         /*while ($submission_files_data = $submission_files_q->fetchObject())
@@ -172,7 +172,7 @@ if (filesize($dir_path . $submission_data->id . "_literature_survey_report.pdf")
         } //filesize($dir_path . $pdf_filename) == TRUE
         else
         {
-            drupal_set_message("Error occurred when generating the PDF version of the report.", 'error');
+            \Drupal::messenger()->addError("Error occurred when generating the PDF version of the report.");
             drupal_goto('');
         }
     
@@ -188,17 +188,17 @@ function download_final_submission_report()
     $reference_filedata = "";
     $eol = "\n";
     $sep = "#";
-    $final_submission_q = db_query("SELECT * FROM {hackathon_final_submission} WHERE id = :id", array(
+    $final_submission_q = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission} WHERE id = :id", array(
         ':id' => $final_submission_id
     ));
     $final_submission_data = $final_submission_q->fetchObject();
-    $submission_q = db_query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
+    $submission_q = \Drupal::database()->query("SELECT * FROM {hackathon_literature_survey} WHERE id = :id", array(
         ':id' => $final_submission_data->literature_survey_id
     ));
     $submission_data = $submission_q->fetchObject();
     if (!$final_submission_data)
     {
-        drupal_set_message('Invalid submission specified.', 'error');
+        \Drupal::messenger()->addError('Invalid submission specified.');
         drupal_goto('');
     } //!$preference_data
     //$final_submission_circuit_filedata = $submission_data->circuit_name . $sep . $final_submission_data->participant_name . $sep . $final_submission_data->institute . $sep . $final_submission_data->abstract . $sep . $final_submission_data->circuit_details . $eol;
@@ -209,18 +209,18 @@ function download_final_submission_report()
         // download PDF file 
         unlink($dir_path . $submission_data->id . "_final_submission_report.pdf");
     }//file_exists($dir_path . "book_" . $preference_data->id . ".pdf")
-    $circuit_diagram_q  = db_query("SELECT * FROM {hackathon_final_submission_files} WHERE final_submission_id = :id and filetype = :filetype", array(
+    $circuit_diagram_q  = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission_files} WHERE final_submission_id = :id and filetype = :filetype", array(
         ':id' => $final_submission_data->id,
         ':filetype' => 'C'
     ));
     $circuit_diagram_path = $root_path . $circuit_diagram_q->fetchObject()->filepath;
-    $waveform_q  = db_query("SELECT * FROM {hackathon_final_submission_files} WHERE final_submission_id = :id and filetype = :filetype", array(
+    $waveform_q  = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission_files} WHERE final_submission_id = :id and filetype = :filetype", array(
         ':id' => $final_submission_data->id,
         ':filetype' => 'W'
     ));
     $waveform_path = $root_path . $waveform_q->fetchObject()->filepath;
 
-    $bib_references_q  = db_query("SELECT * FROM {hackathon_final_submission_bib_references} WHERE final_submission_id = :id", array(
+    $bib_references_q  = \Drupal::database()->query("SELECT * FROM {hackathon_final_submission_bib_references} WHERE final_submission_id = :id", array(
         ':id' => $final_submission_data->id,
     ));
         /*while ($final_submission_files_data = $final_submission_files_q->fetchObject())
@@ -355,7 +355,7 @@ if (filesize($dir_path . $submission_data->id . "_final_submission_report.pdf") 
         } //filesize($dir_path . $pdf_filename) == TRUE
         else
         {
-            drupal_set_message("Error occurred when generating the PDF version of the report.", 'error');
+            \Drupal::messenger()->addError("Error occurred when generating the PDF version of the report.");
             drupal_goto('');
         }
     

@@ -1,0 +1,15 @@
+'add hackathon_submission':
+  title: 'Add/edit hackathon_submission'
+  description: 'Allows users to add/edit submission.'
+'access hackathon_submission':
+  title: 'Access hackathon_submission'
+  description: 'Allows users to view converted.'
+'manage hackathon_submission':
+  title: 'Manage hackathon_submission Files'
+  description: 'Allows users to view all submissions.'
+'download completed circuit':
+  title: 'Download completed circuits files'
+  description: 'Allows anonymous users to download the files of completed circuits.'
+'administer hackathon_submission settings':
+  title: 'Administer hackathon settings'
+  description: 'Allows admin to add/edit submission settings'
