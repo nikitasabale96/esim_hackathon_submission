@@ -10,6 +10,7 @@ namespace Drupal\hackathon_submission\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
 
 class ViewMscdFinalSubmissionForm extends FormBase {
 
@@ -22,15 +23,16 @@ class ViewMscdFinalSubmissionForm extends FormBase {
 
   public function buildForm(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
     $user = \Drupal::currentUser();
-    $submission_id = arg(3);
-    if ($user->uid == 0) {
-      $msg = \Drupal::messenger()->addError(t('It is mandatory to log in on this website to edit your submission. If you are new user please create a new account first.'));
-      //drupal_goto('esim-circuit-simulation-project');
-      drupal_goto('user/login', [
-        'query' => drupal_get_destination()
-        ]);
-      return $msg;
-    } //$user->uid == 0
+        $submission_id = \Drupal::routeMatch()->getParameter('submission_id');
+    // $submission_id = arg(3);
+    // if ($user->uid == 0) {
+    //   $msg = \Drupal::messenger()->addError(t('It is mandatory to log in on this website to edit your submission. If you are new user please create a new account first.'));
+    //   //drupal_goto('esim-circuit-simulation-project');
+    //   drupal_goto('user/login', [
+    //     'query' => drupal_get_destination()
+    //     ]);
+    //   return $msg;
+    // } //$user->uid == 0
     $query = \Drupal::database()->select('mixed_signal_marathon_final_submission');
     $query->fields('mixed_signal_marathon_final_submission');
     $query->condition('literature_survey_id', $submission_id);
@@ -78,30 +80,80 @@ class ViewMscdFinalSubmissionForm extends FormBase {
     // l() expects a Url object, created from a route name or external URI.
     // $form['reference_files']['final_report'] = array(
     //         '#type' => 'item',
-    //         '#markup' => l('Download Final Report and Project Files', 'mixed-signal-design-marathon/download/final-submission/' . $literature_submission_data->id)
+    //         // '#markup' => l('Download Final Report and Project Files', 'mixed-signal-design-marathon/download/final-submission/' . $literature_submission_data->id)
     //     );
 
-    if ($user->uid == $literature_submission_data->uid) {
-      // @FIXME
-// l() expects a Url object, created from a route name or external URI.
+        $form['reference_files']['final_report'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Download Final Report and Project Files'),
+      '#url' => Url::fromUri(
+        'internal:/mixed-signal-design-marathon/download/final-submission/' . $literature_submission_data->id
+      ),
+      '#prefix' => '<div>',
+      '#suffix' => '</div>',
+    ];
+
+//     if ($user->uid == $literature_submission_data->uid) {
+//       // @FIXME
+// // l() expects a Url object, created from a route name or external URI.
 // $form['back'] = array(
 //         '#type' => 'item',
-//         '#markup' => l('Edit submission', 'mixed-signal-design-marathon/edit/final-submission/' . $literature_submission_data->id) . l(' | Go Back', 'mixed-signal-design-marathon/proposed')
+//         // '#markup' => l('Edit submission', 'mixed-signal-design-marathon/edit/final-submission/' . $literature_submission_data->id) . l(' | Go Back', 'mixed-signal-design-marathon/proposed')
 //     );
 
-    }
-    else {
-      // @FIXME
-// l() expects a Url object, created from a route name or external URI.
+//     }
+//     else {
+//       // @FIXME
+// // l() expects a Url object, created from a route name or external URI.
 // $form['all_submissions'] = array(
 //         '#type' => 'item',
-//         '#markup' => l('Go Back', 'mixed-signal-design-marathon/all-submissions')
+//         mixed-signal-design-marathon/all-submissions/final-submissions
+//         // '#markup' => l('Go Back', 'mixed-signal-design-marathon/all-submissions')
 //     );
 
+//     }
+
+      if ($user->id() == $literature_submission_data->uid) {
+
+      $form['actions'] = [
+        '#type' => 'container',
+      ];
+
+      $form['actions']['edit'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Edit submission'),
+        '#url' => Url::fromUri(
+          'internal:/mixed-signal-design-marathon/edit/final-submission/' . $literature_submission_data->id
+        ),
+        '#prefix' => '<div>',
+        '#suffix' => '</div>',
+      ];
+
+      $form['actions']['go_back'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Go Back'),
+        '#url' => Url::fromUri('internal:/mixed-signal-design-marathon/proposed'),
+        '#prefix' => '<div>',
+        '#suffix' => '</div>',
+      ];
     }
+    else {
+
+      $form['go_back'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Go Back'),
+        '#url' => Url::fromUri('internal:/mixed-signal-design-marathon/all-submissions/final-submissions'),
+        '#prefix' => '<div>',
+        '#suffix' => '</div>',
+      ];
+    }
+
+
+  
     return $form;
   }
-    public function submitForm(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+  public function submitForm(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
     }
 }
 ?>

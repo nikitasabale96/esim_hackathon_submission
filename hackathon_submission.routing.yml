@@ -34,7 +34,7 @@ hackathon_submission.display_all_submissions:
   requirements:
     _permission: 'manage hackathon_submission'
 hackathon_submission.view_final_submissions_details_form:
-  path: /hackathon-submission/view-details/final-submission
+  path: /hackathon-submission/view-details/final-submission/{submission_id}
   defaults:
     _title: 'View submission details'
     _form: \Drupal\hackathon_submission\Form\HackathonSubmissionViewFinalSubmissionsDetailsForm
@@ -48,7 +48,7 @@ hackathon_submission.download_emails:
   requirements:
     _permission: 'manage hackathon_submission'
 hackathon_submission.download_project_files:
-  path: /hackathon-submission/download/project-files
+  path: /hackathon-submission/download/project-files/{submission_id}
   defaults:
     _title: 'Download Project Files'
     _controller: '\Drupal\hackathon_submission\Controller\DefaultController::hackathon_submission_download_project_files'
@@ -69,14 +69,14 @@ hackathon_submission.create_zip_of_all_files:
   requirements:
     _permission: 'manage hackathon_submission'
 hackathon_submission.download_literature_survey_report:
-  path: /hackathon-submission/generate-report/literature-survey
+  path: /hackathon-submission/generate-report/literature-survey/{submission_id}
   defaults:
     _title: 'Generate Literature Survey Report'
     _controller: '\Drupal\hackathon_submission\Controller\DefaultController::download_literature_survey_report'
   requirements:
     _permission: 'access hackathon_submission'
 hackathon_submission.download_final_submission_report:
-  path: /hackathon-submission/generate-report/final-submission
+  path: /hackathon-submission/generate-report/final-submission/{submission_id}
   defaults:
     _title: 'Generate Final Submission Report'
     _controller: '\Drupal\hackathon_submission\Controller\DefaultController::download_final_submission_report'
@@ -104,7 +104,7 @@ hackathon_submission.add_project_files_submission:
   requirements:
     _permission: 'add hackathon_submission'
 hackathon_submission.edit_submission_details_form:
-  path: /hackathon-submission/manage/edit-submission
+  path: /hackathon-submission/manage/edit-submission/{submission_id}
   defaults:
     _title: 'Edit CSMD submission'
     _form: \Drupal\hackathon_submission\Form\EditSubmissionDetailsForm
@@ -174,14 +174,14 @@ hackathon_submission.edit_mscd_literature_report_submission_form:
   requirements:
     _permission: 'add hackathon_submission'
 hackathon_submission.view_mscd_literature_report_submission_form:
-  path: /mixed-signal-design-marathon/view/literature-report
+  path: /mixed-signal-design-marathon/view/literature-report/{submission_id}
   defaults:
     _title: 'View Mixed Signal Marathon Literature report'
     _form: \Drupal\hackathon_submission\Form\ViewMscdLiteratureReportSubmissionForm
   requirements:
     _permission: 'add hackathon_submission'
 hackathon_submission.view_mscd_final_submission_form:
-  path: /mixed-signal-design-marathon/view/final-submission
+  path: /mixed-signal-design-marathon/view/final-submission/{submission_id}
   defaults:
     _title: 'View Mixed Signal Marathon Literature report'
     _form: \Drupal\hackathon_submission\Form\ViewMscdFinalSubmissionForm
@@ -202,7 +202,7 @@ hackathon_submission.mscd_display_literature_submissions:
   requirements:
     _permission: 'manage hackathon_submission'
 hackathon_submission.mscd_download_literature_report:
-  path: /mixed-signal-design-marathon/download/literature-report
+  path: /mixed-signal-design-marathon/download/literature-report/{submission_id}
   defaults:
     _title: 'Download MSCD Literature Report'
     _controller: '\Drupal\hackathon_submission\Controller\DefaultController::mscd_download_literature_report'
@@ -265,7 +265,7 @@ hackathon_submission.soc_marathon_submission_display_my_submissions:
   requirements:
     _permission: 'access hackathon_submission'
 hackathon_submission.view_soc_marathon_literature_report_submission_form:
-  path: /mixed-signal-soc-design-marathon/view/literature-report
+  path: /mixed-signal-soc-design-marathon/view/literature-report/{submission_id}
   defaults:
     _title: 'View Mixed Signal SoC Design Marathon Literature report'
     _form: \Drupal\hackathon_submission\Form\ViewSocMarathonLiteratureReportSubmissionForm
@@ -279,7 +279,7 @@ hackathon_submission.edit_soc_marathon_literature_report_submission_form:
   requirements:
     _permission: 'add hackathon_submission'
 hackathon_submission.soc_marathon_download_literature_report:
-  path: /mixed-signal-soc-design-marathon/download/literature-report
+  path: /mixed-signal-soc-design-marathon/download/literature-report/{submission_id}
   defaults:
     _title: 'Download SoC Marathon Literature Report'
     _controller: '\Drupal\hackathon_submission\Controller\DefaultController::soc_marathon_download_literature_report'
@@ -314,7 +314,7 @@ hackathon_submission.add_soc_marathon_final_report_submission:
   requirements:
     _permission: 'add hackathon_submission'
 hackathon_submission.view_soc_marathon_final_submission_form:
-  path: /mixed-signal-soc-design-marathon/view/final-submission
+  path: /mixed-signal-soc-design-marathon/view/final-submission/{submission_id}
   defaults:
     _title: 'View Mixed Signal SoC Marathon Final Submission'
     _form: \Drupal\hackathon_submission\Form\ViewSocMarathonFinalSubmissionForm

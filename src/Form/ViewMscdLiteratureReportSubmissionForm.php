@@ -10,6 +10,8 @@ namespace Drupal\hackathon_submission\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
+
 
 class ViewMscdLiteratureReportSubmissionForm extends FormBase {
 
@@ -22,15 +24,17 @@ class ViewMscdLiteratureReportSubmissionForm extends FormBase {
 
   public function buildForm(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
     $user = \Drupal::currentUser();
-    $submission_id = arg(3);
-    if ($user->uid == 0) {
-      $msg = \Drupal::messenger()->addError(t('It is mandatory to log in on this website to edit your submission. If you are new user please create a new account first.'));
-      //drupal_goto('esim-circuit-simulation-project');
-      drupal_goto('user/login', [
-        'query' => drupal_get_destination()
-        ]);
-      return $msg;
-    } //$user->uid == 0
+    // $submission_id = arg(3);
+            $submission_id = \Drupal::routeMatch()->getParameter('submission_id');
+
+    // if ($user->uid == 0) {
+    //   $msg = \Drupal::messenger()->addError(t('It is mandatory to log in on this website to edit your submission. If you are new user please create a new account first.'));
+    //   //drupal_goto('esim-circuit-simulation-project');
+    //   drupal_goto('user/login', [
+    //     'query' => drupal_get_destination()
+    //     ]);
+    //   return $msg;
+    // } //$user->uid == 0
     $query = \Drupal::database()->select('mixed_signal_marathon_literature_survey');
     $query->fields('mixed_signal_marathon_literature_survey');
     $query->condition('id', $submission_id);
@@ -67,8 +71,20 @@ class ViewMscdLiteratureReportSubmissionForm extends FormBase {
     // l() expects a Url object, created from a route name or external URI.
     // $form['reference_files']['literature_report'] = array(
     //         '#type' => 'item',
-    //         '#markup' => l('Download Report', 'mixed-signal-design-marathon/download/literature-report/' . $submission_data->id)
+    //         // '#markup' => l('Download Report', 'mixed-signal-design-marathon/download/literature-report/' . $submission_data->id)
     //     );
+
+
+$form['reference_files']['literature_report'] = [
+  '#type' => 'link',
+  '#title' => $this->t('Download Report'),
+  '#url' => Url::fromUri(
+    'internal:/mixed-signal-design-marathon/download/literature-report/' . $submission_data->id
+  ),
+  '#prefix' => '<div>',
+      '#suffix' => '</div>',
+    
+];
 
 
     $form["submit"] = [

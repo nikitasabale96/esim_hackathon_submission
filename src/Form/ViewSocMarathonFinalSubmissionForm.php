@@ -1,15 +1,12 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\hackathon_submission\Form\ViewSocMarathonFinalSubmissionForm.
- */
-
 namespace Drupal\hackathon_submission\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ViewSocMarathonFinalSubmissionForm extends FormBase {
 
@@ -22,15 +19,24 @@ class ViewSocMarathonFinalSubmissionForm extends FormBase {
 
   public function buildForm(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
     $user = \Drupal::currentUser();
-    $submission_id = arg(3);
-    if ($user->uid == 0) {
-      $msg = \Drupal::messenger()->addError(t('It is mandatory to log in on this website to edit your submission. If you are new user please create a new account first.'));
-      //drupal_goto('esim-circuit-simulation-project');
-      drupal_goto('user/login', [
-        'query' => drupal_get_destination()
-        ]);
-      return $msg;
-    } //$user->uid == 0
+    // $submission_id = arg(3);
+    $submission_id = \Drupal::routeMatch()->getParameter('submission_id');
+
+    // if ($user->uid == 0) {
+    //   $msg = \Drupal::messenger()->addError(t('It is mandatory to log in on this website to edit your submission. If you are new user please create a new account first.'));
+    //   //drupal_goto('esim-circuit-simulation-project');
+// return new RedirectResponse(
+//     Url::fromRoute('user.login', [], [
+//       'query' => ['destination' => $destination],
+//     ])->toString()
+//   );      return $msg;
+    // }
+
+// $current_user = $this->currentUser();
+
+
+
+    //  //$user->uid == 0
     $query = \Drupal::database()->select('mixed_signal_soc_marathon_final_submission');
     $query->fields('mixed_signal_soc_marathon_final_submission');
     $query->condition('literature_survey_id', $submission_id);
@@ -75,29 +81,97 @@ class ViewSocMarathonFinalSubmissionForm extends FormBase {
     //         '#type' => 'item',
     //         '#markup' => l('Download Final Report and Project Files', 'mixed-signal-soc-design-marathon/download/final-submission/' . $literature_submission_data->id)
     //     );
+    $form['reference_files']['final_report'] = Link::fromTextAndUrl(
+  $this->t('Download Final Report and Project Files'),
+  Url::fromUri('internal:/mixed-signal-soc-design-marathon/download/final-submission/' . $literature_submission_data->id)
+)->toRenderable();
 
-    if ($user->uid == $literature_submission_data->uid) {
-      // @FIXME
-// l() expects a Url object, created from a route name or external URI.
-// $form['back'] = array(
-//         '#type' => 'item',
-//         '#markup' => l('Edit submission', 'mixed-signal-soc-design-marathon/edit/final-submission/' . $literature_submission_data->id) . l(' | Go Back', 'mixed-signal-soc-design-marathon/proposed')
-//     );
 
-    }
-    else {
-      // @FIXME
-// l() expects a Url object, created from a route name or external URI.
-// $form['all_submissions'] = array(
-//         '#type' => 'item',
-//         '#markup' => l('Go Back', 'mixed-signal-soc-design-marathon/all-submissions')
-//     );
+// $current_user = $this->currentUser();
 
-    }
-    return $form;
+// if ($current_user->id() == $literature_submission_data->uid) {
+
+//   $edit_link = Link::fromTextAndUrl(
+//     $this->t('Edit submission'),
+//     Url::fromUri('internal:/mixed-signal-soc-design-marathon/edit/final-submission/' . $literature_submission_data->id)
+//   )->toRenderable();
+
+//   $back_link = Link::fromTextAndUrl(
+//     $this->t('Go Back'),
+//     Url::fromUri('internal:/mixed-signal-soc-design-marathon/proposed')
+//   )->toRenderable();
+
+//   $form['actions_links'] = [
+//     '#type' => 'container',
+//     '#attributes' => ['class' => ['submission-links']],
+//     'edit' => $edit_link,
+//     'separator' => [
+//       '#markup' => ' | ',
+//     ],
+//     'back' => $back_link,
+//   ];
+// }
+// else {
+
+//   $form['all_submissions'] = [
+//     '#type' => 'markup',
+//     '#markup' => Link::fromTextAndUrl(
+//       $this->t('Go Back'),
+//       Url::fromUri('internal:/mixed-signal-soc-design-marathon/view/final-submissions/')
+//     )->toString(),
+//   ];
+// }
+
+// $current_user = $this->currentUser();
+
+// if ($current_user->id() == $literature_submission_data->uid) {
+
+//   $edit_link = Link::fromTextAndUrl(
+//     $this->t('Edit submission'),
+//     Url::fromUri('internal:/mixed-signal-soc-design-marathon/edit/final-submission/' . $literature_submission_data->id)
+//   )->toRenderable();
+
+//   $back_link = Link::fromTextAndUrl(
+//     $this->t('Go Back'),
+//     Url::fromUri('internal:/mixed-signal-soc-design-marathon/proposed')
+//   )->toRenderable();
+
+//   $form['actions_links'] = [
+//     '#type' => 'container',
+//     '#attributes' => ['class' => ['submission-links']],
+//     'edit' => [
+//       '#type' => 'container',
+//       '#attributes' => ['style' => 'margin-bottom: 8px;'],
+//       'link' => $edit_link,
+//     ],
+//     'back' => [
+//       '#type' => 'container',
+//       'link' => $back_link,
+//     ],
+//   ];
+// }
+// else {
+
+//   $form['all_submissions'] = [
+//     '#type' => 'container',
+//     '#attributes' => ['style' => 'margin-bottom:8px;'],
+//     'link' => Link::fromTextAndUrl(
+//       $this->t('Go Back'),
+//       Url::fromUri('internal:/mixed-signal-design-marathon/all-submissions/final-submissions/')
+//     )->toRenderable(),
+//   ];
+// }
+
+
+   return $form;
   }
 
       public function submitForm(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
       }
+ 
+
+
+
+
 }
 ?>
